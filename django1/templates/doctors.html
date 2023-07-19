@@ -3,7 +3,20 @@
 CareConnect-Doctors
 {%endblock%}
 {%block content%}
-<h1>Doctors page</h1>
+<h1 class="text-center">Our Doctors</h1>
+<div class="container text-center bg-light">
+    {% for d in doctors %}
+    <hr>
+   
+    <div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block">
+        <img class="card-img-top" src="{{d.doc_image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Dr.{{d.doc_name}}</h5>
+          <p class="card-text">{{d.doc_spec}} Department</p>
+          <h6>{{d.dep_name}}</h6>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
 {%endblock%}
-
-
